@@ -1,0 +1,29 @@
+{
+  "home": [
+    {
+      "id": 1,
+      "name": "ABC",
+      "company": "Gemini Solutions"
+    },
+    {
+      "id": 2,
+      "name": "DEF",
+      "company": "Gemini Solutions"
+    },
+    {
+      "id": 3,
+      "name": "XYZ",
+      "company": "Apisero"
+    },
+    {
+      "id": 4,
+      "name": "PQR",
+      "company": "Tavisca"
+    },
+    {
+      "id": 5,
+      "name": "MNO",
+      "company": "Capgemini"
+    }
+  ]
+}
