@@ -1,3 +1,4 @@
+<!--Add Employee Form-->
 <form [formGroup]="addEmployee" class="mx-3 my-3">
   <h2 class="text-center">
     Add Employee (Operation 'C')
@@ -25,6 +26,7 @@
   <button class="btn btn-primary" [disabled]="!addEmployee.valid" (click)="addEmp()">Add Employee</button>
 </form>
 
+<!--Update Employee Form-->
 <form [formGroup]="updateEmployee" class="mx-3 my-4">
   <h2 class="text-center">
     Update Empolyee (Operation 'U')
@@ -55,6 +57,7 @@
   <button class="btn btn-primary" [disabled]="!updateEmployee.valid" (click)="updateEmp()">Update Employee</button>
 </form>
 
+<!--Delete Employee Form-->
 <form [formGroup]="delEmployee" class="mx-3 my-4">
   <h2 class="text-center">
     Delete Employee (Operation 'D')
@@ -68,6 +71,7 @@
   <button class="btn btn-danger" [disabled]="!delEmployee.valid" (click)="delEmp()">Delete Employee</button>
 </form>
 
+<!--Display Employee List-->
 <div class="mx-3 mt-4">
   <h2 class="text-center">
     Employee List (Operation 'R')
