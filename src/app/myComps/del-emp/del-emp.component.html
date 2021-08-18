@@ -1,0 +1,14 @@
+<!--Delete Employee Form-->
+<form [formGroup]="delEmployee" class="mx-3 my-4">
+    <h2 class="text-center" i18n>
+        Delete Employee (Operation 'D')
+    </h2>
+    <div class="form-group my-3">
+        <label for="fid">ID</label>
+        <input type="text" name="fid" id="fid" formControlName="id" class="form-control">
+        <div class="alert alert-danger" *ngIf="delEmployee.controls.id.touched && !delEmployee.controls.id.valid">ID
+            can't
+            be empty!</div>
+    </div>
+    <button class="btn btn-danger" [disabled]="!delEmployee.valid" (click)="delEmp()">Delete Employee</button>
+</form>

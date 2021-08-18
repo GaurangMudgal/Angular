@@ -1,79 +1,6 @@
-<!--Add Employee Form-->
-<form [formGroup]="addEmployee" class="mx-3 my-3">
-  <h2 class="text-center">
-    Add Employee (Operation 'C')
-  </h2>
-  <div class="form-group">
-    <label for="fid">ID</label>
-    <input type="text" name="fid" id="fid" formControlName="id" class="form-control">
-    <div class="alert alert-danger" *ngIf="addEmployee.controls.id.touched && !addEmployee.controls.id.valid">ID can't
-      be empty!</div>
-  </div>
-  <div class="form-group my-3">
-    <label for="fname">Name</label>
-    <input type="text" name="fname" id="fname" formControlName="name" class="form-control">
-    <div class="alert alert-danger" *ngIf="addEmployee.controls.name.touched && !addEmployee.controls.name.valid">Name
-      can't
-      be empty!</div>
-  </div>
-  <div class="form-group my-3">
-    <label for="fcompany">Company</label>
-    <input type="text" name="fcompany" id="fcompany" formControlName="company" class="form-control">
-    <div class="alert alert-danger" *ngIf="addEmployee.controls.company.touched && !addEmployee.controls.company.valid">
-      Company can't
-      be empty!</div>
-  </div>
-  <button class="btn btn-primary" [disabled]="!addEmployee.valid" (click)="addEmp()">Add Employee</button>
-</form>
-
-<!--Update Employee Form-->
-<form [formGroup]="updateEmployee" class="mx-3 my-4">
-  <h2 class="text-center">
-    Update Empolyee (Operation 'U')
-  </h2>
-  <div class="form-group">
-    <label for="fid">ID</label>
-    <input type="text" name="fid" id="fid" formControlName="id" class="form-control">
-    <div class="alert alert-danger" *ngIf="updateEmployee.controls.id.touched && !updateEmployee.controls.id.valid">ID
-      can't
-      be empty!</div>
-  </div>
-  <div class="form-group my-3">
-    <label for="fname">Name</label>
-    <input type="text" name="fname" id="fname" formControlName="name" class="form-control">
-    <div class="alert alert-danger" *ngIf="updateEmployee.controls.name.touched && !updateEmployee.controls.name.valid">
-      Name
-      can't
-      be empty!</div>
-  </div>
-  <div class="form-group my-3">
-    <label for="fcompany">Company</label>
-    <input type="text" name="fcompany" id="fcompany" formControlName="company" class="form-control">
-    <div class="alert alert-danger"
-      *ngIf="updateEmployee.controls.company.touched && !updateEmployee.controls.company.valid">
-      Company can't
-      be empty!</div>
-  </div>
-  <button class="btn btn-primary" [disabled]="!updateEmployee.valid" (click)="updateEmp()">Update Employee</button>
-</form>
-
-<!--Delete Employee Form-->
-<form [formGroup]="delEmployee" class="mx-3 my-4">
-  <h2 class="text-center">
-    Delete Employee (Operation 'D')
-  </h2>
-  <div class="form-group my-3">
-    <label for="fid">ID</label>
-    <input type="text" name="fid" id="fid" formControlName="id" class="form-control">
-    <div class="alert alert-danger" *ngIf="delEmployee.controls.id.touched && !delEmployee.controls.id.valid">ID can't
-      be empty!</div>
-  </div>
-  <button class="btn btn-danger" [disabled]="!delEmployee.valid" (click)="delEmp()">Delete Employee</button>
-</form>
-
 <!--Display Employee List-->
 <div class="mx-3 mt-4">
-  <h2 class="text-center">
+  <h2 class="text-center" i18n>
     Employee List (Operation 'R')
   </h2>
   <div *ngIf="showDet" class="my-3">
@@ -88,3 +15,13 @@
   <button class="btn btn-primary my-3" (click)="getDets()">Show</button>
   <button class="btn btn-primary mx-3 my-3" (click)="hideDets()">Hide</button>
 </div>
+
+<!--Menu-->
+<div class="my-5 text-center">
+  <button class="btn btn-primary mx-3" (click)="disAdd()">Add Section</button>
+  <button class="btn btn-primary mx-3" (click)="disUpdate()">Update Section</button>
+  <button class="btn btn-primary mx-3" (click)="disDelete()">Delete Section</button>
+</div>
+<app-add-emp *ngIf="showAdd"></app-add-emp>
+<app-update-emp *ngIf="showUpdate"></app-update-emp>
+<app-del-emp *ngIf="showDelete"></app-del-emp>

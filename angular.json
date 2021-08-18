@@ -10,6 +10,15 @@
           "strict": true
         }
       },
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "de": "src/translate/messages.de.xlf",
+          "es": "src/translate/messages.es.xlf",
+          "fr": "src/translate/messages.fr.xlf",
+          "en": "src/translate/messages.xlf"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,6 +26,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": true,
+            "aot": true,
             "outputPath": "dist/API-Int",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -60,6 +71,26 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "de": {
+              "localize": [
+                "de"
+              ]
+            },
+            "es": {
+              "localize": [
+                "es"
+              ]
+            },
+            "fr": {
+              "localize": [
+                "fr"
+              ]
+            },
+            "en": {
+              "localize": [
+                "en"
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -72,6 +103,18 @@
             },
             "development": {
               "browserTarget": "API-Int:build:development"
+            },
+            "de": {
+              "browserTarget": "API-Int:build:de"
+            },
+            "es": {
+              "browserTarget": "API-Int:build:es"
+            },
+            "fr": {
+              "browserTarget": "API-Int:build:fr"
+            },
+            "en": {
+              "browserTarget": "API-Int:build:en"
             }
           },
           "defaultConfiguration": "development"
